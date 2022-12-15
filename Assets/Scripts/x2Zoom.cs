@@ -8,9 +8,11 @@ public class x2Zoom : MonoBehaviour
     public float defaultFov = 90;
     void Update()
     {
-        if (Input.GetMouseButton(1))
+        if (Input.GetMouseButton(0))
         {
             cam.fieldOfView = (defaultFov / 2);
+            Debug.Log("Left mouse clicked.");
+
         }
         else
         {
