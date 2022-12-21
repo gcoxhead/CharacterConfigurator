@@ -16,11 +16,15 @@ public class CharacterCustomiser : MonoBehaviour
     public SkinnedMeshRenderer RightForearm;
     public SkinnedMeshRenderer LeftForearm;
     public SkinnedMeshRenderer Hair;
+    public int _hairIndex = 0;
+
     public SkinnedMeshRenderer RightHand;
     public SkinnedMeshRenderer LeftHand;
     public SkinnedMeshRenderer Legs;
     public SkinnedMeshRenderer Torso;
     public SkinnedMeshRenderer Belt;
+    public int _beltIndex = 0; 
+
     public SkinnedMeshRenderer Cape;
     public SkinnedMeshRenderer RightElbow;
     public SkinnedMeshRenderer LeftElbow;
@@ -55,7 +59,43 @@ public class CharacterCustomiser : MonoBehaviour
         RightPauldron.sharedMesh = Character.RightPauldron[Random.Range(0, Character.RightPauldron.Length)];
         LeftPauldron.sharedMesh = Character.LeftPauldron[Random.Range(0, Character.LeftPauldron.Length)];
     }
+    public void NextHair()
+    {
+        _hairIndex ++;
 
+        if (_hairIndex >= Character.Hair.Length)
+        {
+            _hairIndex = 0;
+            Debug.Log("hair element" + _hairIndex + " selected");
+            Hair.sharedMesh = Character.Hair[_hairIndex];
+        }
+            
+        else
+        {
+            Hair.sharedMesh = Character.Hair[_hairIndex];
+            Debug.Log("hair element" + _hairIndex + " selected");
+        }
+
+    }
+
+    public void PreviousHair()
+    {
+        
+
+        if (_hairIndex == 0)
+        {
+            _hairIndex = (Character.Hair.Length -1);
+            Debug.Log("hair element" + _hairIndex + " selected");
+            Hair.sharedMesh = Character.Hair[_hairIndex];
+        }
+
+        else
+        {
+            _hairIndex--;
+            Hair.sharedMesh = Character.Hair[_hairIndex];
+            Debug.Log("hair element" + _hairIndex + " selected");
+        }
+    }
 }
 [CustomEditor(typeof(CharacterCustomiser))]
 public class CustomiserEditor : Editor

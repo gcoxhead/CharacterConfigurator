@@ -6252,8 +6252,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1141054156}
   - {fileID: 1216634926}
+  - {fileID: 1141054156}
   m_Father: {fileID: 2087129436}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9160,7 +9160,7 @@ GameObject:
   - component: {fileID: 1141054158}
   - component: {fileID: 1141054157}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: Previous
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9180,7 +9180,7 @@ RectTransform:
   m_Children:
   - {fileID: 2034629594}
   m_Father: {fileID: 733886053}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -9230,7 +9230,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1141054158}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1336942633}
+        m_TargetAssemblyTypeName: CharacterCustomiser, Assembly-CSharp
+        m_MethodName: PreviousHair
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1141054158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9718,7 +9730,7 @@ GameObject:
   - component: {fileID: 1216634928}
   - component: {fileID: 1216634927}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: Next
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9738,7 +9750,7 @@ RectTransform:
   m_Children:
   - {fileID: 1847602762}
   m_Father: {fileID: 733886053}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -9788,7 +9800,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1216634928}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1336942633}
+        m_TargetAssemblyTypeName: CharacterCustomiser, Assembly-CSharp
+        m_MethodName: NextHair
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1216634928
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11008,11 +11032,13 @@ MonoBehaviour:
   RightForearm: {fileID: 840707105}
   LeftForearm: {fileID: 1623455785}
   Hair: {fileID: 1964205274}
+  _hairIndex: 0
   RightHand: {fileID: 1975208380}
   LeftHand: {fileID: 404620293}
   Legs: {fileID: 1827719884}
   Torso: {fileID: 777491794}
   Belt: {fileID: 408020234}
+  _beltIndex: 0
   Cape: {fileID: 256468823}
   RightElbow: {fileID: 223537199}
   LeftElbow: {fileID: 1110042305}
