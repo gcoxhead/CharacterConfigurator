@@ -9,6 +9,8 @@ public class CharacterCustomiser : MonoBehaviour
 
     public SkinnedMeshRenderer RightArm;
     public SkinnedMeshRenderer LeftArm;
+    public int _armIndex = 0;
+
     public SkinnedMeshRenderer RightCalf;
     public SkinnedMeshRenderer LeftCalf;
     public SkinnedMeshRenderer RightFoot;
@@ -26,6 +28,8 @@ public class CharacterCustomiser : MonoBehaviour
     public int _beltIndex = 0; 
 
     public SkinnedMeshRenderer Cape;
+    public int _capeIndex = 0;
+
     public SkinnedMeshRenderer RightElbow;
     public SkinnedMeshRenderer LeftElbow;
     public SkinnedMeshRenderer Eyebrows;
@@ -77,11 +81,9 @@ public class CharacterCustomiser : MonoBehaviour
         }
 
     }
-
     public void PreviousHair()
     {
         
-
         if (_hairIndex == 0)
         {
             _hairIndex = (Character.Hair.Length -1);
@@ -94,6 +96,80 @@ public class CharacterCustomiser : MonoBehaviour
             _hairIndex--;
             Hair.sharedMesh = Character.Hair[_hairIndex];
             Debug.Log("hair element" + _hairIndex + " selected");
+        }
+    }
+    public void NextArms()
+    {
+        _armIndex++;
+
+        if (_armIndex >= Character.RightArm.Length)
+        {
+            _armIndex = 0;
+            Debug.Log("Arm element" + _armIndex + " selected");
+            RightArm.sharedMesh = Character.RightArm[_armIndex];
+            LeftArm.sharedMesh = Character.LeftArm[_armIndex];
+        }
+
+        else
+        {
+            RightArm.sharedMesh = Character.RightArm[_armIndex];
+            LeftArm.sharedMesh = Character.LeftArm[_armIndex];
+            Debug.Log("Arm element" + _hairIndex + " selected");
+        }
+
+    }
+    public void PreviousArms()
+    {
+
+        if (_armIndex == 0)
+        {
+            _armIndex = (Character.RightArm.Length - 1);
+            Debug.Log("arm element" + _armIndex + " selected");
+            RightArm.sharedMesh = Character.RightArm[_armIndex];
+            LeftArm.sharedMesh = Character.LeftArm[_armIndex];
+        }
+
+        else
+        {
+            _armIndex--;
+            RightArm.sharedMesh = Character.RightArm[_armIndex];
+            LeftArm.sharedMesh = Character.LeftArm[_armIndex];
+            Debug.Log("Arm element" + _armIndex + " selected");
+        }
+    }
+    public void NextCape()
+    {
+        _capeIndex++;
+
+        if (_capeIndex >= Character.Cape.Length)
+        {
+            _capeIndex = 0;
+            Cape.sharedMesh = Character.Cape[_capeIndex];
+            Debug.Log("Cape element" + _capeIndex + " selected");
+        }
+
+        else
+        {
+            Debug.Log("Cape element" + _capeIndex + " selected");
+            Cape.sharedMesh = Character.Cape[_capeIndex];
+        }
+
+    }
+    public void PreviousCape()
+    {
+
+        if (_capeIndex == 0)
+        {
+            _capeIndex = (Character.Cape.Length - 1);
+            Debug.Log("Cape element" + _capeIndex + " selected");
+            Cape.sharedMesh = Character.Cape[_capeIndex];
+        }
+
+        else
+        {
+            _capeIndex--;
+            Debug.Log("Cape element" + _capeIndex + " selected");
+            Cape.sharedMesh = Character.Cape[_capeIndex];
         }
     }
 }
