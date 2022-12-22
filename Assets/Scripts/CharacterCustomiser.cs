@@ -24,6 +24,8 @@ public class CharacterCustomiser : MonoBehaviour
     public SkinnedMeshRenderer LeftHand;
     public SkinnedMeshRenderer Legs;
     public SkinnedMeshRenderer Torso;
+    public int _torsoIndex = 0;
+
     public SkinnedMeshRenderer Belt;
     public int _beltIndex = 0; 
 
@@ -172,6 +174,43 @@ public class CharacterCustomiser : MonoBehaviour
             Cape.sharedMesh = Character.Cape[_capeIndex];
         }
     }
+    public void NextTorso()
+    {
+        _torsoIndex++;
+
+        if (_torsoIndex >= Character.Torso.Length)
+        {
+            _torsoIndex = 0;
+            Torso.sharedMesh = Character.Torso[_torsoIndex];
+            Debug.Log("Torso element" + _torsoIndex + " selected");
+        }
+
+        else
+        {
+            Torso.sharedMesh = Character.Torso[_torsoIndex];
+            Debug.Log("Torso element" + _torsoIndex + " selected");
+        }
+
+    }
+    public void PreviousTorso()
+    {
+
+        if (_torsoIndex == 0)
+        {
+            _torsoIndex = (Character.Torso.Length - 1);
+            Debug.Log("Torso element" + _torsoIndex + " selected");
+            Torso.sharedMesh = Character.Torso[_torsoIndex];
+        }
+
+        else
+        {
+            _torsoIndex--;
+            Debug.Log("Torso element" + _torsoIndex + " selected");
+            Torso.sharedMesh = Character.Torso[_torsoIndex];
+        }
+    }
+
+
 }
 [CustomEditor(typeof(CharacterCustomiser))]
 public class CustomiserEditor : Editor

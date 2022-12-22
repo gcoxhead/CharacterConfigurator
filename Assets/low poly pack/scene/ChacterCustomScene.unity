@@ -902,7 +902,7 @@ RectTransform:
   m_Children:
   - {fileID: 1600134116}
   m_Father: {fileID: 445526177}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -952,7 +952,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 67295418}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1336942633}
+        m_TargetAssemblyTypeName: CharacterCustomiser, Assembly-CSharp
+        m_MethodName: NextArms
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &67295418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2737,7 +2749,7 @@ RectTransform:
   m_Children:
   - {fileID: 421540826}
   m_Father: {fileID: 2087129436}
-  m_RootOrder: 0
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4517,10 +4529,10 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1173259518}
   - {fileID: 67295416}
+  - {fileID: 1173259518}
   m_Father: {fileID: 2087129436}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5526,7 +5538,7 @@ GameObject:
   - component: {fileID: 595047637}
   - component: {fileID: 595047636}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: Next
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5596,7 +5608,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 595047637}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1336942633}
+        m_TargetAssemblyTypeName: CharacterCustomiser, Assembly-CSharp
+        m_MethodName: NextTorso
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &595047637
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6255,7 +6279,7 @@ RectTransform:
   - {fileID: 1216634926}
   - {fileID: 1141054156}
   m_Father: {fileID: 2087129436}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -9555,7 +9579,7 @@ RectTransform:
   m_Children:
   - {fileID: 262118779}
   m_Father: {fileID: 445526177}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -9605,7 +9629,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1173259520}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1336942633}
+        m_TargetAssemblyTypeName: CharacterCustomiser, Assembly-CSharp
+        m_MethodName: PreviousArms
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1173259520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11025,6 +11061,7 @@ MonoBehaviour:
   Character: {fileID: 11400000, guid: 8a779f17c63c34c44911be5c44b230ce, type: 2}
   RightArm: {fileID: 309953788}
   LeftArm: {fileID: 1034770792}
+  _armIndex: 0
   RightCalf: {fileID: 1260166393}
   LeftCalf: {fileID: 1658797594}
   RightFoot: {fileID: 82991382}
@@ -11037,9 +11074,11 @@ MonoBehaviour:
   LeftHand: {fileID: 404620293}
   Legs: {fileID: 1827719884}
   Torso: {fileID: 777491794}
+  _torsoIndex: 0
   Belt: {fileID: 408020234}
   _beltIndex: 0
   Cape: {fileID: 256468823}
+  _capeIndex: 0
   RightElbow: {fileID: 223537199}
   LeftElbow: {fileID: 1110042305}
   Eyebrows: {fileID: 57634314}
@@ -12668,7 +12707,7 @@ GameObject:
   - component: {fileID: 1485982810}
   - component: {fileID: 1485982809}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: Previous
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12738,7 +12777,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1485982810}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1336942633}
+        m_TargetAssemblyTypeName: CharacterCustomiser, Assembly-CSharp
+        m_MethodName: PreviousTorso
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1485982810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13534,7 +13585,7 @@ GameObject:
   - component: {fileID: 1568863124}
   - component: {fileID: 1568863123}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: Next
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13554,7 +13605,7 @@ RectTransform:
   m_Children:
   - {fileID: 1777245209}
   m_Father: {fileID: 1942028160}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -13604,7 +13655,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1568863124}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1336942633}
+        m_TargetAssemblyTypeName: CharacterCustomiser, Assembly-CSharp
+        m_MethodName: NextCape
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1568863124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14944,7 +15007,7 @@ RectTransform:
   - {fileID: 1485982808}
   - {fileID: 595047635}
   m_Father: {fileID: 2087129436}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -16400,7 +16463,7 @@ GameObject:
   - component: {fileID: 1850974452}
   - component: {fileID: 1850974451}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: Previous
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16420,7 +16483,7 @@ RectTransform:
   m_Children:
   - {fileID: 1603276289}
   m_Father: {fileID: 1942028160}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -16470,7 +16533,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1850974452}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1336942633}
+        m_TargetAssemblyTypeName: CharacterCustomiser, Assembly-CSharp
+        m_MethodName: PreviousCape
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1850974452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17170,7 +17245,7 @@ GameObject:
   - component: {fileID: 1942028162}
   - component: {fileID: 1942028161}
   m_Layer: 5
-  m_Name: 'SkinChoice '
+  m_Name: 'CapeChoice '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17188,10 +17263,10 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1850974450}
   - {fileID: 1568863122}
+  - {fileID: 1850974450}
   m_Father: {fileID: 2087129436}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -17218,7 +17293,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Skin
+  m_text: Cape
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -19176,12 +19251,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 233863842}
   - {fileID: 733886053}
   - {fileID: 1942028160}
   - {fileID: 445526177}
   - {fileID: 1747970684}
   - {fileID: 2144929621}
+  - {fileID: 233863842}
   - {fileID: 244743616}
   m_Father: {fileID: 1336942632}
   m_RootOrder: 0
@@ -19535,7 +19610,7 @@ RectTransform:
   - {fileID: 742131769}
   - {fileID: 1790568713}
   m_Father: {fileID: 2087129436}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
