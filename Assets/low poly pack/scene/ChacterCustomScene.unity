@@ -6458,7 +6458,7 @@ GameObject:
   - component: {fileID: 742131771}
   - component: {fileID: 742131770}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: Previous
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6528,7 +6528,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 742131771}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1336942633}
+        m_TargetAssemblyTypeName: CharacterCustomiser, Assembly-CSharp
+        m_MethodName: PreviousLegs
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &742131771
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11073,6 +11085,7 @@ MonoBehaviour:
   RightHand: {fileID: 1975208380}
   LeftHand: {fileID: 404620293}
   Legs: {fileID: 1827719884}
+  _legsIndex: 0
   Torso: {fileID: 777491794}
   _torsoIndex: 0
   Belt: {fileID: 408020234}
@@ -15487,7 +15500,7 @@ GameObject:
   - component: {fileID: 1790568715}
   - component: {fileID: 1790568714}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: Next
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15557,7 +15570,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1790568715}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1336942633}
+        m_TargetAssemblyTypeName: CharacterCustomiser, Assembly-CSharp
+        m_MethodName: NextLegs
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1790568715
 MonoBehaviour:
   m_ObjectHideFlags: 0
