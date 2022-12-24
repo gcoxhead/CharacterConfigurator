@@ -29,7 +29,7 @@ public class CharacterCustomiser : MonoBehaviour
     public SkinnedMeshRenderer RightPauldron;
     public SkinnedMeshRenderer LeftPauldron;
 
-    //Index Variables
+    //Index Variables initialised to access element 0 of array's in CharacterSO.
     public int _hairIndex = 0;
     public int _capeIndex = 0;
     public int _armIndex = 0;
@@ -281,7 +281,7 @@ public class CharacterCustomiser : MonoBehaviour
         }
     }
 }
-
+// Custom tool created that provides functionality in the inspector to create random character set-up.
 [CustomEditor(typeof(CharacterCustomiser))]
 public class CustomiserEditor : Editor
 {
