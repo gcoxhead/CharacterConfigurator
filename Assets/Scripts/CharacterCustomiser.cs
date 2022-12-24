@@ -63,7 +63,9 @@ public class CharacterCustomiser : MonoBehaviour
         RightPauldron.sharedMesh = Character.RightPauldron[Random.Range(0, Character.RightPauldron.Length)];
         LeftPauldron.sharedMesh = Character.LeftPauldron[Random.Range(0, Character.LeftPauldron.Length)];
     }
-
+    
+    // Functions are attached to the UIcanvas via this script.
+    // Methods are called attached and linked to the appropriate UI buttons. 
     public void NextHair()
     {
         _hairIndex ++;
@@ -278,8 +280,8 @@ public class CharacterCustomiser : MonoBehaviour
             Legs.sharedMesh = Character.Legs[_legsIndex];
         }
     }
-
 }
+
 [CustomEditor(typeof(CharacterCustomiser))]
 public class CustomiserEditor : Editor
 {
