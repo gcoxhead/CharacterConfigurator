@@ -6,11 +6,8 @@ using UnityEditor;
 public class CharacterCustomiser : MonoBehaviour
 {
     public CharacterSO Character;
-
     public SkinnedMeshRenderer RightArm;
     public SkinnedMeshRenderer LeftArm;
-    public int _armIndex = 0;
-
     public SkinnedMeshRenderer RightCalf;
     public SkinnedMeshRenderer LeftCalf;
     public SkinnedMeshRenderer RightFoot;
@@ -18,22 +15,12 @@ public class CharacterCustomiser : MonoBehaviour
     public SkinnedMeshRenderer RightForearm;
     public SkinnedMeshRenderer LeftForearm;
     public SkinnedMeshRenderer Hair;
-    public int _hairIndex = 0;
-
     public SkinnedMeshRenderer RightHand;
     public SkinnedMeshRenderer LeftHand;
     public SkinnedMeshRenderer Legs;
-    public int _legsIndex = 0;
-
     public SkinnedMeshRenderer Torso;
-    public int _torsoIndex = 0;
-
     public SkinnedMeshRenderer Belt;
-    public int _beltIndex = 0; 
-
     public SkinnedMeshRenderer Cape;
-    public int _capeIndex = 0;
-
     public SkinnedMeshRenderer RightElbow;
     public SkinnedMeshRenderer LeftElbow;
     public SkinnedMeshRenderer Eyebrows;
@@ -42,6 +29,15 @@ public class CharacterCustomiser : MonoBehaviour
     public SkinnedMeshRenderer RightPauldron;
     public SkinnedMeshRenderer LeftPauldron;
 
+    //Index Variables
+    public int _hairIndex = 0;
+    public int _capeIndex = 0;
+    public int _armIndex = 0;
+    public int _torsoIndex = 0;
+    public int _beltIndex = 0;
+    public int _legsIndex = 0;
+
+    // Generates a random character by selecting random elements from each of the Character SO array's.
     public void Randomise()
     {
         RightArm.sharedMesh = Character.RightArm[Random.Range(0, Character.RightArm.Length)];
@@ -67,6 +63,7 @@ public class CharacterCustomiser : MonoBehaviour
         RightPauldron.sharedMesh = Character.RightPauldron[Random.Range(0, Character.RightPauldron.Length)];
         LeftPauldron.sharedMesh = Character.LeftPauldron[Random.Range(0, Character.LeftPauldron.Length)];
     }
+
     public void NextHair()
     {
         _hairIndex ++;
@@ -209,6 +206,41 @@ public class CharacterCustomiser : MonoBehaviour
             _torsoIndex--;
             Debug.Log("Torso element" + _torsoIndex + " selected");
             Torso.sharedMesh = Character.Torso[_torsoIndex];
+        }
+    }
+    public void NextBelt()
+    {
+        _beltIndex++;
+
+        if (_beltIndex >= Character.Belt.Length)
+        {
+            _beltIndex = 0;
+            Belt.sharedMesh = Character.Belt[_beltIndex];
+            Debug.Log("Belt element" + _beltIndex + " selected");
+        }
+
+        else
+        {
+            Belt.sharedMesh = Character.Belt[_beltIndex];
+            Debug.Log("Belt element" + _beltIndex + " selected");
+        }
+
+    }
+    public void PreviousBelt()
+    {
+
+        if (_beltIndex == 0)
+        {
+            _beltIndex = (Character.Belt.Length - 1);
+            Debug.Log("Belt element" + _beltIndex + " selected");
+            Belt.sharedMesh = Character.Belt[_beltIndex];
+        }
+
+        else
+        {
+            _beltIndex--;
+            Debug.Log("Belt element" + _beltIndex + " selected");
+            Belt.sharedMesh = Character.Belt[_beltIndex];
         }
     }
     public void NextLegs()
