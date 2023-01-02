@@ -83,3 +83,9 @@ MonoBehaviour:
   LeftPauldron:
   - {fileID: 4300148, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
   - {fileID: 4300144, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  Shield:
+  - {fileID: 0}
+  - {fileID: 0}
+  Sword:
+  - {fileID: 0}
+  - {fileID: 0}

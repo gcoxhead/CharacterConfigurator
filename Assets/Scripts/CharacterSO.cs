@@ -30,6 +30,8 @@ public class CharacterSO : ScriptableObject
     public Mesh[] LeftKnee;
     public Mesh[] RightPauldron;
     public Mesh[] LeftPauldron;
+    public Mesh[] Shield;
+    public Mesh[] Sword;
 
 }
 

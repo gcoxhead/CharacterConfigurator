@@ -28,6 +28,8 @@ public class CharacterCustomiser : MonoBehaviour
     public SkinnedMeshRenderer LeftKnee;
     public SkinnedMeshRenderer RightPauldron;
     public SkinnedMeshRenderer LeftPauldron;
+    public SkinnedMeshRenderer Shield;
+    public SkinnedMeshRenderer Sword;
 
     //Index Variables initialised to access element 0 of array's in CharacterSO.
     public int _hairIndex = 0;
@@ -36,6 +38,9 @@ public class CharacterCustomiser : MonoBehaviour
     public int _torsoIndex = 0;
     public int _beltIndex = 0;
     public int _legsIndex = 0;
+    public int _shieldIndex = 0;
+    public int _swordIndex = 0;
+
 
     // Generates a random character by selecting random elements from each of the Character SO array's.
     public void Randomise()
