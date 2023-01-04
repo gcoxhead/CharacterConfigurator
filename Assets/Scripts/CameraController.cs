@@ -11,6 +11,7 @@ public class CameraController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         
     }
 
@@ -18,5 +19,31 @@ public class CameraController : MonoBehaviour
     void Update()
     {
         
+    }
+
+    void OnClickEnter()
+    {
+
+    }
+    public void ViewCamChar()
+    {
+        _vCams[0].enabled = true;
+        _vCams[1].enabled = false;
+        _vCams[2].enabled = false;
+    }
+
+    public void ViewCamShields()
+    {
+        _vCams[0].enabled = false;
+        _vCams[1].enabled = true;
+        _vCams[2].enabled = false;
+    }
+
+    public void ViewCamSwords()
+    {
+        _vCams[0].enabled = false;
+        _vCams[1].enabled = false;
+        _vCams[2].enabled = true;
+
     }
 }
