@@ -28,7 +28,7 @@ public class AudioManager : MonoBehaviour
     public void playMusic()
     {
         SceneMusic.Play();
-    }
-
+    }    
+    
 }
 
