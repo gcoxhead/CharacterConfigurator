@@ -10,7 +10,7 @@ public class AnimationStateController : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-        Debug.Log(animator);
+        Debug.Log("Animator component loaded");
 
     }
 
@@ -29,11 +29,11 @@ public class AnimationStateController : MonoBehaviour
 
         if (Input.GetKey("down"))
         {
-            animator.SetBool("isBackwards", true);
+            animator.SetBool("isBackward", true);
         }
         if (!Input.GetKey("down"))
         {
-            animator.SetBool("isBackwards", false);
+            animator.SetBool("isBackward", false);
         }
 
         if (Input.GetKey("space"))
@@ -43,7 +43,7 @@ public class AnimationStateController : MonoBehaviour
 
         if (!Input.GetKey("space"))
         {
-            animator.SetBool("isJumping", true);
+            animator.SetBool("isJumping", false);
         }
     }
 }
