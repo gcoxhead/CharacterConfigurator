@@ -51,8 +51,8 @@ public class UiController : MonoBehaviour
     public void SwordGUI()
     {
         _UI[0].SetActive(false);
-        _UI[1].SetActive(true);
-        _UI[2].SetActive(true);
+        _UI[1].SetActive(false);
+        _UI[2].SetActive(false);
         _UI[3].SetActive(true);
         
     }
