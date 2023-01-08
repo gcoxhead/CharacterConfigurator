@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/ChacterCustomScene 1.unity
+    guid: c271c256ca29a7c458cdd34365962bfb
+  - enabled: 1
+    path: Assets/Scenes/ChacterQuest.unity
+    guid: 4452f62327805844dbd6210f6deeabf7
   m_configObjects: {}
