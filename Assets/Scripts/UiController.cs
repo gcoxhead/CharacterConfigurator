@@ -56,6 +56,12 @@ public class UiController : MonoBehaviour
         _UI[3].SetActive(true);
         
     }
+
+   public void HUDActive()
+    {
+        _UI[4].SetActive(true);
+    }
+
 }
 
 

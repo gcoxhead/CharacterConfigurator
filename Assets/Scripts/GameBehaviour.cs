@@ -15,16 +15,19 @@ public class GameBehaviour : MonoBehaviour
     public int MaxItems = 4;
     private int _itemsCollected = 0;
     private int _playerHP = 10;
+    private int _credits = 1000;
 
     public TMP_Text HealthText;
     public TMP_Text ItemText;
     public TMP_Text ProgressText;
+    public TMP_Text CrText;
 
     // Start is called before the first frame update
     void Start()
     {
         //ItemText.text += _itemsCollected;
-       // HealthText.text = "Player Health: " + _playerHP;
+        // HealthText.text = "Player Health: " + _playerHP;
+        CrText.text = "Cr:" + _credits;
     }
 
     
@@ -72,6 +75,7 @@ public class GameBehaviour : MonoBehaviour
         }
     }
 
+   
     public void RestartScene()
 
     {

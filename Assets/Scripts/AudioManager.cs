@@ -9,6 +9,7 @@ public class AudioManager : MonoBehaviour
     public AudioSource Sword;
     public AudioSource Shield;
     public AudioSource Wind;
+    public AudioSource Click;
 
     public void playSword()
     {
@@ -29,6 +30,11 @@ public class AudioManager : MonoBehaviour
     {
         SceneMusic.Play();
     }    
+
+    public void UIClick()
+    {
+        Click.Play();
+    }
     
 }
 
