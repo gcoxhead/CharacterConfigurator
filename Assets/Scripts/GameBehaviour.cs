@@ -21,8 +21,10 @@ public class GameBehaviour : MonoBehaviour
         }
     }
 
+    public GameBehaviour GameManager;
     public Button NextSceneButton;
     public Button RestartSceneButton;
+    public Button Buy;
 
 
     public int MaxItems = 4;
@@ -43,7 +45,6 @@ public class GameBehaviour : MonoBehaviour
         CrText.text = "Cr:" + _credits;
     }
 
-    
     public int Items
     {
         get { return _itemsCollected; }
