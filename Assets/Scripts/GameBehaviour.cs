@@ -7,7 +7,20 @@ using UnityEngine.SceneManagement;
 
 public class GameBehaviour : MonoBehaviour
 {
-    
+    private static GameBehaviour instance;
+    void Awake()
+    {
+        if (instance !=null)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+    }
+
     public Button NextSceneButton;
     public Button RestartSceneButton;
 
