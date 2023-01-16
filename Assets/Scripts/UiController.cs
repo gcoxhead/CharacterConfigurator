@@ -5,6 +5,20 @@ using UnityEngine.UI;
 
 public class UiController : MonoBehaviour
 {
+    private static UiController instance;
+    void Awake()
+    {
+        if (instance != null)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+    }
+
     [SerializeField]
 
     private GameObject[] _UI;
@@ -28,7 +42,7 @@ public class UiController : MonoBehaviour
         _UI[1].SetActive(false);
         _UI[2].SetActive(false);
         _UI[3].SetActive(false);
-
+        _UI[4].SetActive(false);
     }
     public void CharCustGUI()
     {
@@ -36,7 +50,7 @@ public class UiController : MonoBehaviour
         _UI[1].SetActive(true);
         _UI[2].SetActive(false);
         _UI[3].SetActive(false);
-
+        _UI[4].SetActive(true);
     }
 
     public void ShieldGUI()
@@ -45,7 +59,7 @@ public class UiController : MonoBehaviour
         _UI[1].SetActive(false);
         _UI[2].SetActive(true);
         _UI[3].SetActive(false);
-
+        _UI[4].SetActive(true);
     }
 
     public void SwordGUI()
@@ -54,11 +68,15 @@ public class UiController : MonoBehaviour
         _UI[1].SetActive(false);
         _UI[2].SetActive(false);
         _UI[3].SetActive(true);
-        
+        _UI[4].SetActive(true);
     }
 
    public void HUDActive()
     {
+        _UI[0].SetActive(false);
+        _UI[1].SetActive(true);
+        _UI[2].SetActive(false);
+        _UI[3].SetActive(false);
         _UI[4].SetActive(true);
     }
 
