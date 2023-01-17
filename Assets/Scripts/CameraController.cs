@@ -15,46 +15,49 @@ public class CameraController : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    void OnClickEnter()
-    {
-
-    }
-    public void ViewCamChar()
+  public void ViewCamMenu()
     {
         _vCams[0].enabled = true;
         _vCams[1].enabled = false;
         _vCams[2].enabled = false;
         _vCams[3].enabled = false;
+        _vCams[4].enabled = false;
     }
 
-    public void ViewCamShields()
+    public void ViewCamChar()
     {
         _vCams[0].enabled = false;
         _vCams[1].enabled = true;
         _vCams[2].enabled = false;
         _vCams[3].enabled = false;
+        _vCams[4].enabled = false;
+    }
+
+    public void ViewCamShields()
+    {
+        _vCams[0].enabled = false;
+        _vCams[1].enabled = false;
+        _vCams[2].enabled = true;
+        _vCams[3].enabled = false;
+        _vCams[4].enabled = false;
     }
 
     public void ViewCamSwords()
     {
         _vCams[0].enabled = false;
         _vCams[1].enabled = false;
-        _vCams[2].enabled = true;
-        _vCams[3].enabled = false;
+        _vCams[2].enabled = false;
+        _vCams[3].enabled = true;
+        _vCams[4].enabled = false;
 
     }
 
-    public void ViewCamMenu()
+    public void ViewPlayGameCam()
     {
         _vCams[0].enabled = false;
         _vCams[1].enabled = false;
         _vCams[2].enabled = false;
-        _vCams[3].enabled = true;
+        _vCams[3].enabled = false;
+        _vCams[4].enabled = true;
     }
 }

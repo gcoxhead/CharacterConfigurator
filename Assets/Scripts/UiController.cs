@@ -80,6 +80,16 @@ public class UiController : MonoBehaviour
         _UI[4].SetActive(true);
     }
 
+    public void GamePlayHUD()
+    {
+        _UI[0].SetActive(false);
+        _UI[1].SetActive(false);
+        _UI[2].SetActive(false);
+        _UI[3].SetActive(false);
+        _UI[4].SetActive(true);
+
+    }
+
 }
 
 
