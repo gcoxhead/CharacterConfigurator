@@ -41,7 +41,7 @@ public class GameBehaviour : MonoBehaviour
     void Start()
     {
         //ItemText.text += _itemsCollected;
-        // HealthText.text = "Player Health: " + _playerHP;
+        HealthText.text = "Player Health: " + _playerHP;
         CrText.text = "Cr:" + _credits;
     }
 
@@ -57,12 +57,12 @@ public class GameBehaviour : MonoBehaviour
             if (_itemsCollected >= MaxItems)
             {
                 ProgressText.text = "You've found all the items!";
-                NextSceneButton.gameObject.SetActive(true);
+                //NextSceneButton.gameObject.SetActive(true);
                 Time.timeScale = 0f;
             }
             else
             {
-                ProgressText.text = "Item found, only " + (MaxItems - _itemsCollected) + "more!";
+                ProgressText.text = "Item found, only " + (MaxItems - _itemsCollected) + " more!";
             }
         }
     }
