@@ -22,15 +22,15 @@ public class GameBehaviour : MonoBehaviour
     }
 
     public GameBehaviour GameManager;
-    public Button NextSceneButton;
-    public Button RestartSceneButton;
+    /*public Button NextSceneButton;
+    public Button RestartSceneButton;*/
     public Button Buy;
 
 
-    public int MaxItems = 4;
+    public int MaxItems = 1000;
     private int _itemsCollected = 0;
     private int _playerHP = 10;
-    private int _credits = 1000;
+    private int _credits = 100;
 
     public TMP_Text HealthText;
     public TMP_Text ItemText;
@@ -41,7 +41,7 @@ public class GameBehaviour : MonoBehaviour
     void Start()
     {
         //ItemText.text += _itemsCollected;
-        HealthText.text = "Player Health: " + _playerHP;
+        HealthText.text = "Health: " + _playerHP;
         CrText.text = "Cr:" + _credits;
     }
 
@@ -67,30 +67,40 @@ public class GameBehaviour : MonoBehaviour
         }
     }
 
-    
+    public int Credits
+    {
+        get { return _credits; }
+        set
+        {
+            _credits = value;
+            Debug.LogFormat("Coins:{0}", _credits);
+            CrText.text = "CR: " + Credits;
+
+            {
+                CrText.text = "CR" + ( _credits);
+            }
+        }
+    }
+
     public int HP
     {
         get { return _playerHP; }
         set
         {
             _playerHP = value;
-            HealthText.text = "Player Health: " + HP;
+            HealthText.text = "Health: " + HP;
             Debug.LogFormat("Lives: {0}", _playerHP);
             if(_playerHP <=0)
             {
                 ProgressText.text = "You want another life with that?";
-                RestartSceneButton.gameObject.SetActive(true);
+                //RestartSceneButton.gameObject.SetActive(true);
                 Time.timeScale = 0;
-            }
-            else
-            {
-                ProgressText.text = "Ouch... that's gotta hurt.";
             }
         }
     }
 
-   
-    public void RestartScene()
+
+    /*public void RestartScene()
 
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex );
@@ -104,5 +114,5 @@ public class GameBehaviour : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
         Time.timeScale = 1f;
-    }
+    }*/
 }

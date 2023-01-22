@@ -92,7 +92,7 @@ public class PlayerBehaviour : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             _gameManager.HP -= 1;
-            Debug.Log("HP Collision Detected");
+            Debug.Log("Enemy Damage Taken...");
         }
     }
 

@@ -10,6 +10,7 @@ public class AudioManager : MonoBehaviour
     public AudioSource Shield;
     public AudioSource Wind;
     public AudioSource Click;
+    public AudioSource CollectCoins;
 
     public void playSword()
     {
@@ -35,6 +36,11 @@ public class AudioManager : MonoBehaviour
     {
         Click.Play();
     }
-    
+
+    public void collectCoins()
+    {
+        CollectCoins.Play();
+    }
+
 }
 
