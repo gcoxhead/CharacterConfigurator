@@ -17,11 +17,12 @@ public class AnimationStateController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey("up"))
+        if (Input.GetKey("up")) 
         {
             animator.SetBool("isRunning", true);
             Debug.Log("Run forest, run!");
         }
+
         if (!Input.GetKey("up"))
         {
             animator.SetBool("isRunning", false);
@@ -36,14 +37,34 @@ public class AnimationStateController : MonoBehaviour
             animator.SetBool("isBackward", false);
         }
 
-        if (Input.GetKey("space"))
+        /*if (Input.GetKey("j"))
         {
             animator.SetBool("isJumping", true);
         }
 
-        if (!Input.GetKey("space"))
+        if (!Input.GetKey("j"))
         {
             animator.SetBool("isJumping", false);
+        }
+        */
+        if (Input.GetKey("space"))
+        {
+            animator.SetBool("isCastingSpell", true);
+        }
+
+        if (!Input.GetKey("space"))
+        {
+            animator.SetBool("isCastingSpell", false);
+        }
+
+        if (Input.GetKey("z"))
+        {
+            animator.SetBool("isAttack", true);
+        }
+
+        if (!Input.GetKey("z"))
+        {
+            animator.SetBool("isAttack", false);
         }
     }
 }
