@@ -10,6 +10,7 @@ TagManager:
   - Enemy
   - Coin
   - Ground
+  - PlayerSword
   layers:
   - Default
   - TransparentFX

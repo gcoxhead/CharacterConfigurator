@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab6b6885285f9a440a1518ce1eef4f35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onscreenDelay: 2
+  onscreenDelay: 3
   SpellExplosion: {fileID: 8056365186444016764, guid: 6d6272b60e7fd00408b6a1f612d93196, type: 3}
 --- !u!1001 &2629211661931535258
 PrefabInstance:

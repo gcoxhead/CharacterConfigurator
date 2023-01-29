@@ -5,6 +5,9 @@ using UnityEngine;
 public class AnimationStateController : MonoBehaviour
 {
     Animator animator;
+    public AudioSource sword;
+    public float volume;
+
 
     // Start is called before the first frame update
     void Start()
@@ -17,7 +20,7 @@ public class AnimationStateController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey("up")) 
+        if (Input.GetKey("up"))
         {
             animator.SetBool("isRunning", true);
             Debug.Log("Run forest, run!");
@@ -47,12 +50,12 @@ public class AnimationStateController : MonoBehaviour
             animator.SetBool("isJumping", false);
         }
         */
-        if (Input.GetKey("space"))
+        if (Input.GetKeyDown("space"))
         {
             animator.SetBool("isCastingSpell", true);
         }
 
-        if (!Input.GetKey("space"))
+        if (!Input.GetKeyDown("space"))
         {
             animator.SetBool("isCastingSpell", false);
         }
@@ -60,13 +63,13 @@ public class AnimationStateController : MonoBehaviour
         if (Input.GetKey("z"))
         {
             animator.SetBool("isAttack", true);
+            sword.Play();
         }
 
         if (!Input.GetKey("z"))
-        {
-            animator.SetBool("isAttack", false);
+          animator.SetBool("isAttack", false);
         }
     }
-}
+
 
 
