@@ -6,7 +6,8 @@ public class AnimationStateController : MonoBehaviour
 {
     Animator animator;
     public AudioSource sword;
-    public float volume;
+    public AudioSource castSpell;
+    public float volume = 1.0f;
 
 
     // Start is called before the first frame update
@@ -40,7 +41,7 @@ public class AnimationStateController : MonoBehaviour
             animator.SetBool("isBackward", false);
         }
 
-        /*if (Input.GetKey("j"))
+        if (Input.GetKey("j"))
         {
             animator.SetBool("isJumping", true);
         }
@@ -49,10 +50,12 @@ public class AnimationStateController : MonoBehaviour
         {
             animator.SetBool("isJumping", false);
         }
-        */
+        
         if (Input.GetKeyDown("space"))
         {
             animator.SetBool("isCastingSpell", true);
+            castSpell.Play();
+
         }
 
         if (!Input.GetKeyDown("space"))

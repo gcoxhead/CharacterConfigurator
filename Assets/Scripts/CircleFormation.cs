@@ -5,7 +5,16 @@ public class CircleFormation : MonoBehaviour
     public GameObject prefab;
     public int numberOfObjects = 20;
     public float radius = 5f;
-    void Start()
+   
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            trap();
+        }
+    }
+
+    void trap()
     {
         for (int i = 0; i < numberOfObjects; i++)
         {

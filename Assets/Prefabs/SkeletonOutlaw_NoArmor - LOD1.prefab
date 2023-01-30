@@ -1064,6 +1064,7 @@ MonoBehaviour:
   Player: {fileID: 0}
   PatrolRoute: {fileID: 0}
   Locations: []
+  EnemyExplode: {fileID: 0}
 --- !u!195 &95015862848808992
 NavMeshAgent:
   m_ObjectHideFlags: 0

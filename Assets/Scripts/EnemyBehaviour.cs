@@ -11,6 +11,8 @@ public class EnemyBehaviour : MonoBehaviour
     private int _locationIndex = 0;
     private NavMeshAgent _agent;
     private int _lives = 3;
+    public ParticleSystem EnemyExplode;
+    public GameObject powerUp;
     public int EnemyLives
     {
         get { return _lives; }
@@ -20,6 +22,8 @@ public class EnemyBehaviour : MonoBehaviour
             _lives = value;
             if (_lives <=0)
             { Destroy(this.gameObject);
+                Instantiate(EnemyExplode, gameObject.transform.position, Quaternion.identity);
+                Instantiate(powerUp, gameObject.transform.position, Quaternion.identity);
                 Debug.Log("Enemy Down!");
             }
         }
@@ -29,6 +33,8 @@ public class EnemyBehaviour : MonoBehaviour
     {
         _agent = GetComponent<NavMeshAgent>();
         Player = GameObject.Find("Player").transform;
+        //EnemyExplode = GameObject.Find("EnemyExplode");
+        //Instantiate(EnemyExplode, gameObject.transform.position, Quaternion.identity);
         InitializePatrolRoute();
 
         MoveToNextPatrolLocation();
