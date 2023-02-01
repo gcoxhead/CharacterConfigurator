@@ -13,7 +13,6 @@ public class CircleFormation : MonoBehaviour
             trap();
         }
     }
-
     void trap()
     {
         for (int i = 0; i < numberOfObjects; i++)
