@@ -23,7 +23,7 @@ public class PlayerBehaviour : MonoBehaviour
     private bool _isShooting;
 
     private GameBehaviour _gameManager;
-    
+  
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
@@ -68,7 +68,7 @@ public class PlayerBehaviour : MonoBehaviour
 
         if (_isShooting)
         {
-            GameObject newBullet = Instantiate(Bullet, this.transform.position + new Vector3(0.0f, 1.5f, 1.0f), this.transform.rotation);
+            GameObject newBullet = Instantiate(Bullet, this.transform.position + new Vector3(1, 1, 1), this.transform.rotation);
 
             Rigidbody BulletRB = newBullet.GetComponent<Rigidbody>(); //transform
 

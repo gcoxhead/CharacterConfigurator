@@ -5,6 +5,7 @@ public class CircleFormation : MonoBehaviour
     public GameObject prefab;
     public int numberOfObjects = 20;
     public float radius = 5f;
+    public AudioSource audioSource;
    
     private void OnTriggerEnter(Collider other)
     {
@@ -25,5 +26,6 @@ public class CircleFormation : MonoBehaviour
             Quaternion rot = Quaternion.Euler(0, angleDegrees, 0);
             Instantiate(prefab, pos, rot);
         }
+        audioSource.Play();
     }
 }

@@ -7,6 +7,7 @@ public class ItemCoin : MonoBehaviour
     public GameBehaviour GameManager;
     public GameObject coin;
     public AudioSource collectCoins;
+    public ParticleSystem particleSystem;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +25,7 @@ public class ItemCoin : MonoBehaviour
             Debug.Log("Coin Collected!");
             GameManager.Credits += 10;
             collectCoins.Play();
+            Instantiate(particleSystem, gameObject.transform.position, Quaternion.identity);
         }
 
 

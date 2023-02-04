@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 3460560473729021367}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 8.594912, y: -1.1030006, z: 2.840001}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.43478268, y: 0.43478268, z: 0.43478277}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3612779686614407788}
@@ -98,9 +98,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 430cc74b4079f214ba04964f6826e10e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameManager: {fileID: 0}
+  GameManager: {fileID: 6641732548218383279, guid: e5b6f25cf7fe8ff409256fec975f5145, type: 3}
   coin: {fileID: 0}
-  collectCoins: {fileID: 0}
+  collectCoins: {fileID: 1154200722704226394, guid: 298ccd01638c6504fb4f060be13fec97, type: 3}
+  particleSystem: {fileID: 7713386935823211740, guid: ef7b4a047524ef74ba573411dab88037, type: 3}
 --- !u!65 &4393685929384744773
 BoxCollider:
   m_ObjectHideFlags: 0

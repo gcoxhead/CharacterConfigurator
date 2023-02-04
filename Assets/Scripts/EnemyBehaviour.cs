@@ -12,6 +12,7 @@ public class EnemyBehaviour : MonoBehaviour
     private NavMeshAgent _agent;
     private int _lives = 3;
     public ParticleSystem EnemyExplode;
+
     public GameObject powerUp;
     public int EnemyLives
     {
