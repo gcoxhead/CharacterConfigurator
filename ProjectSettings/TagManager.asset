@@ -12,7 +12,8 @@ TagManager:
   - Ground
   - PlayerSword
   - Trap
-  - Spikes
+  - Spike
+  - EnemySword
   layers:
   - Default
   - TransparentFX

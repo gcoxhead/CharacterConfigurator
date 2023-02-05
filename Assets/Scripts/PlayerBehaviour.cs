@@ -29,7 +29,7 @@ public class PlayerBehaviour : MonoBehaviour
         _rb = GetComponent<Rigidbody>();
         _col = GetComponent<CapsuleCollider>();
         _gameManager = GameObject.Find("Game Manager").GetComponent<GameBehaviour>();
-        Debug.Log("reference created");
+        //Debug.Log("Game object reference created");
     }
 
     void Update()
@@ -38,6 +38,11 @@ public class PlayerBehaviour : MonoBehaviour
         _hInput = Input.GetAxis("Horizontal") * RotateSpeed;
         _isJumping |= Input.GetKeyDown(KeyCode.J);
         _isShooting |= Input.GetKeyDown(KeyCode.Space);
+
+        if (IsGrounded())
+        {
+            Debug.Log("Grounded");
+        }
         /*
         this.transform.Translate(Vector3.forward * _vInput * Time.deltaTime);
         this.transform.Rotate(Vector3.up * _hInput * Time.deltaTime);
@@ -70,9 +75,9 @@ public class PlayerBehaviour : MonoBehaviour
         {
             GameObject newBullet = Instantiate(Bullet, this.transform.position + new Vector3(1, 1, 1), this.transform.rotation);
 
-            Rigidbody BulletRB = newBullet.GetComponent<Rigidbody>(); //transform
+            //Rigidbody BulletRB = newBullet.GetComponent<Rigidbody>(); //transform
 
-            BulletRB.velocity = this.transform.forward * BulletSpeed;
+            //BulletRB.velocity = this.transform.forward * BulletSpeed;
         }
         _isShooting = false;
 
@@ -93,6 +98,12 @@ public class PlayerBehaviour : MonoBehaviour
         {
             _gameManager.HP -= 1;
             Debug.Log("Enemy Damage Taken...");
+        }
+
+        if (collision.gameObject.CompareTag("Spike"))
+        {
+            _gameManager.HP -= 2;
+            Debug.Log("That was sharp...-2 damage");
         }
     }
 

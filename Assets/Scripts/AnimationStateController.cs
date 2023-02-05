@@ -41,35 +41,35 @@ public class AnimationStateController : MonoBehaviour
             animator.SetBool("isBackward", false);
         }
 
-        if (Input.GetKey("j"))
+        if (Input.GetKey(KeyCode.J))
         {
             animator.SetBool("isJumping", true);
         }
 
-        if (!Input.GetKey("j"))
+        if (!Input.GetKey(KeyCode.J))
         {
             animator.SetBool("isJumping", false);
         }
         
-        if (Input.GetKeyDown("space"))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             animator.SetBool("isCastingSpell", true);
             castSpell.Play();
 
         }
 
-        if (!Input.GetKeyDown("space"))
+        if (!Input.GetKeyDown(KeyCode.Space))
         {
             animator.SetBool("isCastingSpell", false);
         }
 
-        if (Input.GetKey("z"))
+        if (Input.GetKeyDown(KeyCode.Z))
         {
             animator.SetBool("isAttack", true);
             sword.Play();
         }
 
-        if (!Input.GetKey("z"))
+        if (!Input.GetKeyDown(KeyCode.Z))
           animator.SetBool("isAttack", false);
         }
     }

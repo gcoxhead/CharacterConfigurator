@@ -92,7 +92,8 @@ public class GameBehaviour : MonoBehaviour
             Debug.LogFormat("Lives: {0}", _playerHP);
             if(_playerHP <=0)
             {
-                ProgressText.text = "You want another life with that?";
+                ProgressText.text = ("You failed your mission...");
+                //respaw
                 //RestartSceneButton.gameObject.SetActive(true);
                 Time.timeScale = 0;
             }

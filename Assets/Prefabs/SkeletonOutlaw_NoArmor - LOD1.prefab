@@ -1,5 +1,65 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &116569121
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 116569122}
+  - component: {fileID: 116569123}
+  - component: {fileID: 116569124}
+  m_Layer: 0
+  m_Name: AttackRange
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &116569122
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 116569121}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3801143674853402650}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &116569123
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 116569121}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 29.102676, y: 2.9642932, z: 17.579094}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &116569124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 116569121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adc2e773a3bbebb4b949df8e2be64d4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _agent: {fileID: 95015862848808992}
+  Player: {fileID: 0}
 --- !u!1 &3806301594601871604
 GameObject:
   m_ObjectHideFlags: 0
@@ -989,6 +1049,7 @@ GameObject:
   - component: {fileID: 2666628476275436669}
   - component: {fileID: 95015862848808991}
   - component: {fileID: 95015862848808992}
+  - component: {fileID: 95015862848809000}
   m_Layer: 0
   m_Name: SkeletonOutlaw_NoArmor - LOD1
   m_TagString: Enemy
@@ -1012,6 +1073,7 @@ Transform:
   - {fileID: 3801322822009337968}
   - {fileID: 3809606271666854710}
   - {fileID: 3801499961254877576}
+  - {fileID: 116569122}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1061,10 +1123,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1712c5c7c648edc48a17255d6f227157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
+  PlayerLocation: {fileID: 0}
   PatrolRoute: {fileID: 0}
   Locations: []
-  EnemyExplode: {fileID: 0}
+  EnemyExplode: {fileID: 7266397905666650596, guid: 8a64943d8ecfe2549b7bf6f0537e7dfc, type: 3}
+  Player: {fileID: 0}
+  powerUp: {fileID: 1565782784846205230, guid: 987be535805c7384292056946de02e90, type: 3}
 --- !u!195 &95015862848808992
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1087,6 +1151,19 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!65 &95015862848809000
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3806971281311798188}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 29.102676, y: 2.9642932, z: 17.579094}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3806975361632553226
 GameObject:
   m_ObjectHideFlags: 0
@@ -2116,9 +2193,10 @@ GameObject:
   - component: {fileID: 3801495570370686734}
   - component: {fileID: 3794726420868664412}
   - component: {fileID: 3783684939321976574}
+  - component: {fileID: 639789994}
   m_Layer: 0
   m_Name: Axe00_Left
-  m_TagString: Untagged
+  m_TagString: EnemySword
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2188,6 +2266,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &639789994
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3807513156046029682}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.9550263, y: 0.1768852, z: 1.8320006}
+  m_Center: {x: 0.11702856, y: 0.00000049712696, z: 0.68746877}
 --- !u!1 &3807515727109537400
 GameObject:
   m_ObjectHideFlags: 0
@@ -2648,9 +2739,10 @@ GameObject:
   - component: {fileID: 3801557126477967074}
   - component: {fileID: 3794051555147437686}
   - component: {fileID: 3783754422900132154}
+  - component: {fileID: 1650334362}
   m_Layer: 0
   m_Name: Axe00_Right
-  m_TagString: Untagged
+  m_TagString: EnemySword
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2720,6 +2812,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1650334362
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3807744156305803508}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.9550265, y: 0.17688559, z: 1.8320006}
+  m_Center: {x: 0.117043965, y: -0.0000006007049, z: 0.6874673}
 --- !u!1 &3807750649017774676
 GameObject:
   m_ObjectHideFlags: 0

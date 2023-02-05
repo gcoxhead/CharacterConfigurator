@@ -5,13 +5,14 @@ using UnityEngine.AI;
 
 public class EnemyBehaviour : MonoBehaviour
 {
-    public Transform Player;
+    public Transform PlayerLocation;
     public Transform PatrolRoute;
     public List<Transform> Locations;
     private int _locationIndex = 0;
     private NavMeshAgent _agent;
     private int _lives = 3;
     public ParticleSystem EnemyExplode;
+    public Transform Player;
 
     public GameObject powerUp;
     public int EnemyLives
@@ -68,20 +69,25 @@ public class EnemyBehaviour : MonoBehaviour
     }
       
     //isTrigger must be ticked in the inspector to allow player to enter the collider zone.
-    void OnTriggerEnter(Collider other)
+    void OnTriggerStay(Collider other)
     {
-        if (other.name == "Player")
+        if (_agent != null)
         {
-            _agent.destination = Player.position;
-            Debug.Log("Player detected - attack!");
-        }
+            if (other.name == "Player")
+            {
+                _agent.destination = Player.position;
+                Debug.Log("Player detected - attack!");
+            }
 
-        if (other.gameObject.CompareTag ("Bullet"))
-        {
-            EnemyLives -= 1;
-            Debug.Log("Critical hit!");
+            if (other.gameObject.CompareTag("Bullet"))
+            {
+                EnemyLives -= 1;
+                Debug.Log("Critical hit!");
+            }
         }
+          
     }
+
     void OnTriggerExit(Collider other)
     {
         if (other.name == "Player")
