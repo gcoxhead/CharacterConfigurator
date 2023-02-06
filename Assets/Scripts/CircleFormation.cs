@@ -6,12 +6,15 @@ public class CircleFormation : MonoBehaviour
     public int numberOfObjects = 20;
     public float radius = 5f;
     public AudioSource audioSource;
+    public GameObject enemyPrefab;
+    public GameObject bossSpawnPoint;
    
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             trap();
+            attack();
         }
     }
     void trap()
@@ -27,5 +30,10 @@ public class CircleFormation : MonoBehaviour
             Instantiate(prefab, pos, rot);
         }
         audioSource.Play();
+
+    }
+    void attack()
+    {
+            Instantiate(enemyPrefab, bossSpawnPoint.transform.position, bossSpawnPoint.transform.rotation);
     }
 }
