@@ -6,9 +6,13 @@ public class CircleFormation : MonoBehaviour
     public int numberOfObjects = 20;
     public float radius = 5f;
     public AudioSource audioSource;
+    public GameObject Player;
     public GameObject enemyPrefab;
     public GameObject bossSpawnPoint;
-   
+    private void Start()
+    {
+        Player = GameObject.Find("Player");
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))

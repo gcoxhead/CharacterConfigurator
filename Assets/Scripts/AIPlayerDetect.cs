@@ -7,10 +7,11 @@ public class AIPlayerDetect : MonoBehaviour
 {
     // Start is called before the first frame update
     public NavMeshAgent _agent;
-    public Transform Player;
+    public Transform PlayerTransform;
     void Start()
     {
         //_agent = GetComponent<NavMeshAgent>();
+        PlayerTransform = GameObject.Find("Player").transform;
     }
 
     private void OnTriggerStay(Collider other)
@@ -35,7 +36,7 @@ public class AIPlayerDetect : MonoBehaviour
                 Destroy(gameObject);
             
             else
-            _agent.destination = Player.position;
+            _agent.destination = PlayerTransform.position;
             Debug.Log("Player detected - attack!");
         }
 
